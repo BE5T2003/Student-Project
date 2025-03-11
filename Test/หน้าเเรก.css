@@ -1,0 +1,293 @@
+/* รีเซ็ตค่าเริ่มต้น */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* โครงสร้างหลัก */
+body {
+    display: flex;
+    height: 100vh;
+}
+
+/* 🎨 Sidebar */
+.sidebar {
+    width: 300px;
+    background: #000; /* เปลี่ยนเป็นสีดำ */
+    color: white;
+    height: 100vh;
+    padding: 20px;
+    transition: width 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+/* Sidebar Logo */
+.sidebar .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+/* Sidebar Menu */
+.sidebar .menu {
+    margin-top: 20px;
+    list-style: none;
+}
+
+.sidebar .menu li {
+    padding: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: background 0.3s;
+    white-space: nowrap;
+}
+
+/* ไฮไลต์เมนูปัจจุบัน */
+.sidebar .menu li:hover,
+.sidebar .menu .active {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* 🎨 ปรับ Sidebar ให้พับ */
+.sidebar.hide {
+    width: 80px;
+    padding: 20px 10px;
+}
+
+/* เมื่อ Sidebar พับ ให้ซ่อนข้อความ แต่แสดงไอคอน */
+.sidebar.hide .menu li span,
+.sidebar.hide .logo span {
+    display: none;
+}
+
+/* 🎨 โลโก้ตัวอักษร */
+.uni-name, .uni-break {
+    color: #4c9ef6;
+    font-weight: bold;
+}
+
+.uni-break {
+    display: block; 
+}
+
+/* 🎨 Content */
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+/* ขยาย Content ให้เต็มจอ */
+.main-content.full {
+    width: 100%;
+}
+
+/* 🎨 Topbar */
+.topbar {
+    width: 100%;
+    background: #1172b7; /* เปลี่ยนเป็นสีน้ำเงิน */
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid #ddd;
+}
+
+/* 🎨 ปรับตำแหน่งของ user-info */
+.topbar .user-info {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-left: auto;
+}
+
+.topbar .user-info img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+.topbar .user-info h4 {
+    margin: 0;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+/* 🎨 ปรับตำแหน่งปุ่ม Search */
+.topbar .search {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    background: white;
+    padding: 5px 10px;
+    margin-left: 10px;
+}
+
+.topbar .search input {
+    border: none;
+    outline: none;
+    padding: 8px 10px;
+    font-size: 14px;
+    width: 100%; /* ให้เต็มพื้นที่ */
+    background: transparent; /* ไม่มีพื้นหลัง */
+    color: black; /* สีข้อความ */
+}
+
+/* 🎨 Dashboard */
+.dashboard {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    flex-grow: 1;
+}
+
+/* 🎨 Profile Card */
+.profile-card {
+    text-align: left;
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.profile-card img {
+    display: block;
+    width: 250px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+}
+
+.profile-card h3 {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.profile-card p {
+    font-size: 14px;
+    margin: 5px 0;
+    color: #333;
+}
+
+/* 🎨 Advisor */
+.advisor {
+    background: #f4f4f4;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.advisor h4 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.advisor p {
+    font-size: 14px;
+    margin: 3px 0;
+}
+
+/* 🎨 Transactions */
+.transactions {
+    width: 60%;
+}
+
+/* 🎨 ปรับแต่งตารางรายวิชา */
+.transaction-table {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px;
+    margin: 10px auto;
+    overflow-x: auto;
+}
+
+.transaction-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* 🎨 หัวข้อของตาราง */
+.transaction-table th {
+    background: black;
+    color: white;
+    padding: 12px;
+    text-align: center;
+    font-size: 16px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+/* 🎨 แถวข้อมูล */
+.transaction-table td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+/* 🎨 จัดตัวเลขให้เป็นวงกลม */
+.circle-number {
+    display: inline-block;
+    background: #007bff;
+    color: white;
+    font-weight: bold;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 16px;
+}
+
+/* 🎨 จัดตำแหน่งให้ List อยู่ซ้าย */
+.transaction-table td:nth-child(2) {
+    text-align: left;
+}
+
+/* 🎨 ปรับขนาดและตำแหน่งไอคอน Finish ✅ / ❌ */
+.transaction-table .status {
+    font-size: 20px;
+    text-align: center;
+}
+
+.transaction-table .status .check {
+    color: green;
+}
+
+.transaction-table .status .cross {
+    color: red;
+}
+
+/* 🎨 ปุ่ม Show Transactions */
+.show-transactions {
+    background: none;
+    border: 1px solid #007bff;
+    color: #007bff;
+    font-size: 14px;
+    cursor: pointer;
+    display: block;
+    padding: 8px 15px;
+    border-radius: 5px;
+    margin: 10px auto;
+}
+
+.show-transactions:hover {
+    background: #007bff;
+    color: white;
+}

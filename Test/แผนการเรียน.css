@@ -1,0 +1,317 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+.sidebar {
+    height: 100vh;
+    width: 260px;
+    position: fixed;
+    background: #1b1e21;
+    color: white;
+    padding-top: 20px;
+    padding-left: 15px;
+    transition: all 0.3s;
+}
+.sidebar.hidden {
+    width: 0;
+    overflow: hidden;
+    padding: 0;
+}
+.sidebar .logo-container {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+.sidebar img {
+    max-width: 50px;
+    margin-right: 10px;
+}
+.sidebar h3 {
+    font-size: 1.2rem;
+    color: #00c6ff;
+}
+.sidebar a {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+}
+.sidebar a:hover {
+    background: #007bff;
+}
+.content {
+    margin-left: 290px;
+    padding: 40px;
+    transition: margin-left 0.3s;
+}
+.content.expanded {
+    margin-left: 0;
+}
+.topbar {
+    background: linear-gradient(45deg, #3871c1, #3871d3);
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.topbar .menu-toggle {
+    font-size: 24px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: white;
+    margin-right: 15px;
+}
+.topbar .dashboard-title {
+    font-size: 24px;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+.topbar .search-container {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+.topbar .search-container input {
+    border-radius: 20px;
+    padding: 5px 15px;
+    margin-right: 10px;
+    border: none;
+}
+.topbar .user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.topbar .user-info img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+/* Category dropdown container */
+.category-container {
+    display: flex;
+    justify-content: flex-end; /* Aligns the dropdown to the right */
+    margin: 20px 0;
+    padding: 0 15px;
+}
+
+.category-dropdown select {
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    cursor: pointer;
+    min-width: 180px;
+}
+
+/* Course table styling */
+.course-container {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 20px;
+    overflow-x: auto;
+    margin-top: 10px;
+}
+
+.course-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.course-table thead tr {
+    background-color: #43b3e5;
+    color: white;
+}
+
+.course-table th {
+    padding: 15px;
+    text-align: left;
+    font-weight: 500;
+}
+
+.course-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.course-table tbody tr:nth-of-type(even) {
+    background-color: #f8f9fa;
+}
+
+.course-table tbody tr:hover {
+    background-color: #f0f7fb;
+    transition: all 0.2s;
+}
+
+.course-table td {
+    padding: 15px;
+    vertical-align: middle;
+}
+
+.view-details {
+    background-color: #0275d8;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 14px;
+    display: inline-block;
+}
+
+.view-details:hover {
+    background-color: #025aa5;
+}
+
+@media (max-width: 768px) {
+    .course-table {
+        min-width: 650px;
+    }
+    
+    .course-container {
+        padding: 10px;
+    }
+    
+    .course-table th, 
+    .course-table td {
+        padding: 10px;
+    }
+    
+    .category-container {
+        justify-content: flex-start;
+    }
+}
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.table thead {
+    background: #0056b3;
+    color: white;
+}
+.table th, .table td {
+    text-align: center;
+    padding: 12px;
+    border: 1px solid #dee2e6;
+}
+.table tbody tr:hover {
+    background: #f1f1f1;
+}
+.btn-primary {
+    background: #007bff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 14px;
+}
+.btn-primary:hover {
+    background: #0056b3;
+}
+.badge {
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 5px;
+}
+.study-plan-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.study-plan-table th, .study-plan-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.study-plan-table th {
+    background-color: #f2f2f2;
+}
+
+.category-row {
+    background-color: #f8f9fa;
+    font-weight: bold;
+}
+
+.course-name {
+    text-align: left;
+}
+/* ตั้งค่าพื้นฐานของตาราง */
+.study-plan-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px auto;
+    font-size: 14px;
+    background-color: white;
+    text-align: center;
+}
+
+/* กำหนดเส้นขอบและ padding ของแต่ละช่อง */
+.study-plan-table th,
+.study-plan-table td {
+    border: 1px solid #000;
+    padding: 8px;
+}
+
+/* หัวข้อหลักของตาราง */
+.study-plan-table thead th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+}
+
+/* สีของหมวดหมู่ */
+.category-row td {
+    background-color: #d9d9d9;
+    font-weight: bold;
+    text-align: left;
+}
+
+/* ปรับแต่งช่องข้อมูลของรายวิชา */
+.course-name {
+    text-align: left;
+    padding-left: 10px;
+}
+
+/* จัดตำแหน่งข้อความตรงกลาง */
+.text-center {
+    text-align: center;
+}
+
+/* ปรับระยะห่างและสีของตัวอักษร */
+.category-container {
+    margin-bottom: 10px;
+}
+
+.category-dropdown select {
+    padding: 5px;
+    font-size: 14px;
+}
+
+/* ทำให้เฉพาะแถว "รวม" เป็นสีขาว */
+.summary-row td {
+    background-color: white !important;
+    font-weight: bold;
+}
+
+
+/* ทำให้ตารางรองรับ Responsive Design */
+@media (max-width: 768px) {
+    .study-plan-table {
+        font-size: 12px;
+    }
+
+    .study-plan-table th,
+    .study-plan-table td {
+        padding: 6px;
+    }
+}

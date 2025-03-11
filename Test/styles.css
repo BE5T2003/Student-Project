@@ -1,0 +1,232 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+.sidebar {
+    height: 100vh;
+    width: 260px;
+    position: fixed;
+    background: #1b1e21;
+    color: white;
+    padding-top: 20px;
+    padding-left: 15px;
+    transition: all 0.3s;
+}
+
+.sidebar.hidden {
+    width: 0;
+    overflow: hidden;
+    padding: 0;
+}
+
+.sidebar .logo-container {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.sidebar img {
+    max-width: 50px;
+    margin-right: 10px;
+}
+
+.sidebar h3 {
+    font-size: 1.2rem;
+    color: #00c6ff;
+}
+
+.sidebar a {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+}
+
+.sidebar a:hover {
+    background: #007bff;
+}
+
+.content {
+    margin-left: 290px;
+    padding: 40px;
+    transition: margin-left 0.3s;
+}
+
+.content.expanded {
+    margin-left: 0;
+}
+
+.topbar {
+    background: linear-gradient(45deg, #3871c1, #3871d3);
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.topbar .menu-toggle {
+    font-size: 24px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: white;
+    margin-right: 15px;
+}
+
+.topbar .dashboard-title {
+    font-size: 24px;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+.topbar .search-container {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.topbar .search-container input {
+    border-radius: 20px;
+    padding: 5px 15px;
+    margin-right: 10px;
+    border: none;
+}
+
+.topbar .user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.topbar .user-info img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+.print-btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.print-btn {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: bold;
+}
+
+.print-btn:hover {
+    background: #0056b3;
+}
+
+#show-more-btn {
+    width: 15%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+#show-more-btn:hover {
+    background-color: #0056b3;
+}
+
+
+
+.transaction-table {
+    width: 100%;
+    border-collapse: collapse;
+    /* ทำให้ขอบของเซลล์ติดกัน */
+    margin-top: 20px;
+}
+
+.transaction-table th,
+.transaction-table td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #dee2e6;
+    /* เพิ่มขอบรอบเซลล์ */
+}
+
+.transaction-table th {
+    background-color: #f1f1f1;
+    font-weight: bold;
+}
+
+.transaction-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+    /* เพิ่มพื้นหลังให้กับแถวที่เป็นเลขคู่ */
+}
+
+.transaction-table tr:hover {
+    background-color: #f1f1f1;
+    /* เพิ่มพื้นหลังเมื่อเลื่อนเมาส์เหนือแถว */
+}
+
+.tick {
+    color: green;
+    /* เปลี่ยนสีติ๊กถูกให้เป็นสีเขียว */
+    font-size: 18px;
+    /* ขนาดของติ๊กถูก */
+    margin-left: 10px;
+    /* ระยะห่างจากตัวเลข TOEIC */
+}
+
+.section-header {
+    color: #f1f1f1;
+    border: 2px solid #1377db;
+    /* กรอบสีน้ำเงิน */
+    padding: 10px;
+    background-color: #1939c5;
+    /* สีพื้นหลังอ่อน */
+    margin-bottom: 20px;
+    /* เว้นระยะห่างกับตาราง */
+    text-align: center;
+    /* จัดกลาง */
+    font-size: 1.25rem;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.transaction-table {
+    margin-top: 0;
+    /* ทำให้ไม่มีระยะห่างระหว่างตารางและหัวข้อ */
+}
+
+.table-title {
+    background-color: #f1f1f1;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 8px;
+}
+
+.table th,
+.table td {
+    text-align: center;
+}
+
+.button-container {
+    margin-top: 20px;
+    text-align: right;
+}
+
+.button-container button {
+    margin: 5px;
+}
